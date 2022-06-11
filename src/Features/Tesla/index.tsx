@@ -279,7 +279,7 @@ export const Tesla = () => {
               </p>
             </div>
 
-            <div className="absolute flex flex-col gap-5 bottom-20 md:flex-row">
+            <div className="absolute flex flex-col gap-5 bottom-44 md:bottom-24 md:flex-row">
               <a href="#" className="btn-hero btn-hero-active">
                 Shop Now
               </a>
@@ -290,10 +290,13 @@ export const Tesla = () => {
 
       <footer
         aria-label="Site footer"
-        className={(bottomReached ? "" : "hidden ") + "w-full -mt-10 bottom-10"}
+        className={
+          (bottomReached ? "" : "hidden ") +
+          "absolute border-t pt-2 w-full bottom-2"
+        }
       >
         <nav className="text-xs font-semibold text-gray-600">
-          <ul className="flex flex-row items-center justify-center gap-3">
+          <ul className="flex flex-col items-center justify-center gap-3 md:flex-row">
             <li className="inline-flex">
               <a
                 href="/about"

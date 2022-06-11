@@ -1,7 +1,7 @@
 import { Instagram, Tesla } from "./Features";
 
 function App() {
-  return <Instagram />;
+  return <Tesla />;
 }
 
 export default App;
