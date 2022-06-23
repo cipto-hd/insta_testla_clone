@@ -1,15 +1,12 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaChevronDown, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import ReactRotatingText from "react-rotating-text";
-import { styles, css } from "../../Animation";
-import { DevSvg } from "./../../../assets/portfolio";
+import { DevSvg } from "../assets/portfolio";
 
 export const MainHome = () => {
   return (
     <div id="home" className="h-screen snap-start">
       <div className="container flex flex-col items-start h-full gap-10 pt-24 md:flex-row">
-        <div
-          className={css(styles.fadeInRight, styles.fadeIn) + " md:flex-auto"}
-        >
+        <div className="md:flex-auto" data-aos="fade-left" data-anchor="#home">
           <h3>Hi there,</h3>
           <h2 className="mt-2">
             I am{" "}
@@ -31,34 +28,31 @@ export const MainHome = () => {
           </p>
 
           <a
-            href="https://wa.me/23408032347546?text=HELLO%20CURPRA%20CODE,%20%20PLEASE%20I%20NEED%20WEBSITE%20OR%20WEB-APP%20"
+            href="https://api.whatsapp.com/send/?phone=+6282335757105&text=Hello+Cipto+Hadi%2C++PLEASE+I+NEED+WEBSITE+OR+WEB-APP+&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button
-              data-entrance="from-top"
-              className="px-6 py-2 mt-4 uppercase transition-colors duration-300 ease-in-out bg-gray-300 rounded-lg hover:bg-gray-600 hover:text-gray-100 dark:text-gray-800 dark:hover:text-gray-100"
-            >
+            <button className="px-6 py-2 mt-4 uppercase transition-colors duration-300 ease-in-out bg-gray-300 rounded-lg hover:bg-gray-600 hover:text-gray-100 dark:text-gray-800 dark:hover:text-gray-100">
               hire me
             </button>
           </a>
           <div className="flex flex-row gap-2 mt-6">
             <a
-              href="https://github.com/CurpraCode"
+              href="https://github.com/cipto-hd"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaGithub className="social-link" />
             </a>
             <a
-              href="https://www.linkedin.com/in/curtis-oyakoya-b70b091b2/"
+              href="https://www.linkedin.com/in/ciptohadi"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedin className="social-link" />
             </a>
             <a
-              href="https://twitter.com/CurpraCode"
+              href="https://twitter.com/cipto_hd"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -70,10 +64,15 @@ export const MainHome = () => {
         <img
           src={DevSvg}
           alt="my pics here"
-          className={
-            css(styles.fadeInLeft, styles.fadeIn) + " mx-auto mt-8 w-80"
-          }
+          className="mx-auto mt-8 w-80"
+          data-aos="fade-right"
+          data-anchor="#home"
         />
+      </div>
+      <div className="relative flex items-center justify-center w-full mt-2">
+        <a href="#about" className="absolute bottom-2">
+          <FaChevronDown className="w-10 h-10 animate-bounce" />
+        </a>
       </div>
     </div>
   );

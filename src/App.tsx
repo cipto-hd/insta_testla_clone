@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { Portfolio, Preloader } from "./Features";
+import { Preloader } from "./features";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
-import { styles, css } from "./Features/Animation";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { fixAosAnim } from "./utils";
+import { Footer, Header, Main } from "./components";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -10,6 +13,8 @@ function App() {
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 10000);
+    Aos.init({ duration: 1000 });
+    fixAosAnim();
   }, []);
 
   return (
@@ -17,9 +22,16 @@ function App() {
       {/* {loading ? (
         <Preloader />
       ) : ( */}
-      <section className={`${themeMode} ${css(styles.fadeIn)}`}>
-        <Portfolio />
-      </section>
+      <div
+        className={
+          themeMode +
+          " w-full h-screen text-gray-800 bg-gray-50 dark:bg-gray-800 dark:text-gray-50"
+        }
+      >
+        <Header />
+        <Main />
+        <Footer />
+      </div>
       {/*  )} */}
     </>
   );

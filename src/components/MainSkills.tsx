@@ -1,6 +1,3 @@
-import { css } from "aphrodite";
-import { useRef } from "react";
-import { useInViewport } from "react-in-viewport";
 import {
   FaCss3,
   FaGit,
@@ -11,7 +8,6 @@ import {
   FaPhp,
   FaReact,
 } from "react-icons/fa";
-import { styles } from "../../Animation";
 
 const NestLogo = (props: any) => (
   <svg
@@ -51,56 +47,47 @@ const MongoDBLogo = (props: any) => (
   </svg>
 );
 export const MainSkills = () => {
-  const myRef = useRef(null);
-  const { inViewport, enterCount } = useInViewport(
-    myRef,
-    {},
-    { disconnectOnLeave: false }
-  );
-
   return (
     <div id="skills" className="h-screen snap-start">
       <div className="container flex flex-col h-full pt-24 md:div-row">
         <h2 className="mt-4 text-2xl font-bold">Skills</h2>
         <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <FaHtml5 className="skill_icon" />
           </div>
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <FaCss3 className="skill_icon" />
           </div>
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <FaJs className="skill_icon" />
           </div>
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <FaReact className="skill_icon" />
           </div>
 
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <FaNodeJs className="skill_icon" />
           </div>
 
-          <span ref={myRef}></span>
-
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <NestLogo className="skill_icon bg-gray-50 dark:bg-gray-900 dark:fill-gray-50 fill-gray-900" />
           </div>
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <FaPhp className="skill_icon" />
           </div>
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <FaLaravel className="skill_icon" />
           </div>
 
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
-            <MongoDBLogo className="bg-gray-50 skill_icon dark:bg-gray-900 dark:fill-gray-50 fill-gray-900" />
+          <div data-aos="zoom-out" data-anchor="#skills">
+            <MongoDBLogo className="bg-gray-50 skill_icon hover:border dark:bg-gray-900 dark:fill-gray-50 fill-gray-900" />
           </div>
 
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <MariaDBLogo className="p-1 bg-gray-50 skill_icon dark:bg-gray-900 dark:fill-gray-50 fill-gray-900" />
           </div>
 
-          <div className={inViewport ? css(styles.zoomInDown) : ""}>
+          <div data-aos="zoom-out" data-anchor="#skills">
             <FaGit className="skill_icon" />
           </div>
         </div>

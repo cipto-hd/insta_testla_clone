@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, setBottomReached } from "../../../store";
+import { RootState, setBottomReached } from "../store";
 import { MainAbout } from "./MainAbout";
 import { MainContact } from "./MainContact";
 import { MainHome } from "./MainHome";
@@ -28,7 +28,7 @@ export const Main = () => {
     <main
       onScroll={onScroll}
       ref={scrollRef}
-      className="w-full h-screen overflow-y-scroll scroll-smooth snap-mandatory snap-y scrollbar-none"
+      className="w-full h-screen overflow-y-scroll scroll-smooth snap-mandatory overflow-x-clip snap-y scrollbar-none bg-gray-50 dark:bg-gray-800 dark:text-gray-50"
     >
       <MainHome />
       <MainAbout />

@@ -1,6 +1,4 @@
-import { useRef } from "react";
 import { FaEye } from "react-icons/fa";
-import { useInViewport } from "react-in-viewport";
 import {
   AirBnbApp,
   LandingPage,
@@ -8,27 +6,18 @@ import {
   MovieApp,
   PortfolioSite,
   WeatherApp,
-} from "../../../assets/portfolio";
-import { css, styles } from "../../Animation";
+} from "../assets/portfolio";
 
 export const MainProjects = () => {
-  const myRef = useRef(null);
-  const { inViewport, enterCount } = useInViewport(
-    myRef,
-    {},
-    { disconnectOnLeave: false }
-  );
-
   return (
     <div id="projects" className="h-screen snap-start">
       <div className="container flex flex-col h-full pt-24 md:div-row">
         <h2 className="mt-4 text-2xl font-bold">Projects</h2>
         <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
           <div
-            className={
-              (inViewport ? css(styles.bounceInLeft) : "") +
-              " relative flex flex-col w-40 h-24"
-            }
+            className="relative flex flex-col w-40 h-24"
+            data-aos="zoom-in"
+            data-anchor="#projects"
           >
             <img
               src={AirBnbApp}
@@ -51,10 +40,9 @@ export const MainProjects = () => {
           </div>
 
           <div
-            className={
-              (inViewport ? css(styles.bounceInRight) : "") +
-              " relative flex flex-col w-40 h-24"
-            }
+            className="relative flex flex-col w-40 h-24 "
+            data-aos="zoom-in"
+            data-anchor="#projects"
           >
             <img
               src={MovieApiApp}
@@ -76,10 +64,9 @@ export const MainProjects = () => {
             </a>
           </div>
           <div
-            className={
-              (inViewport ? css(styles.bounceInLeft) : "") +
-              " relative flex flex-col w-40 h-24"
-            }
+            className="relative flex flex-col w-40 h-24"
+            data-aos="zoom-in"
+            data-anchor="#projects"
           >
             <img
               src={MovieApp}
@@ -101,12 +88,10 @@ export const MainProjects = () => {
               <FaEye className="w-full h-full text-gray-800 bg-transparent rounded-full hover:bg-gray-800 hover:text-gray-100" />
             </a>
           </div>
-          <span ref={myRef} className="-mx-2"></span>
           <div
-            className={
-              (inViewport ? css(styles.bounceInRight) : "") +
-              " relative flex flex-col w-40 h-24"
-            }
+            className="relative flex flex-col w-40 h-24 "
+            data-aos="zoom-in"
+            data-anchor="#projects"
           >
             <img
               src={PortfolioSite}
@@ -128,10 +113,9 @@ export const MainProjects = () => {
             </a>
           </div>
           <div
-            className={
-              (inViewport ? css(styles.bounceInLeft) : "") +
-              " relative flex flex-col w-40 h-24"
-            }
+            className="relative flex flex-col w-40 h-24 "
+            data-aos="zoom-in"
+            data-anchor="#projects"
           >
             <img
               src={WeatherApp}
@@ -153,10 +137,9 @@ export const MainProjects = () => {
             </a>
           </div>
           <div
-            className={
-              (inViewport ? css(styles.bounceInRight) : "") +
-              " relative flex flex-col w-40 h-24"
-            }
+            className="relative flex flex-col w-40 h-24 "
+            data-aos="zoom-in"
+            data-anchor="#projects"
           >
             <img
               src={LandingPage}

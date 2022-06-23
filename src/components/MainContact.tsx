@@ -1,18 +1,8 @@
 import { useForm } from "@formspree/react";
-import { useRef } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import { useInViewport } from "react-in-viewport";
-import { MailSvg } from "../../../assets/portfolio";
-import { css, styles } from "../../Animation";
+import { MailSvg } from "../assets/portfolio";
 
 export const MainContact = () => {
-  const myRef = useRef(null);
-  const { inViewport, enterCount } = useInViewport(
-    myRef,
-    {},
-    { disconnectOnLeave: false }
-  );
-
   const [state, handleSubmit] = useForm("xpzkrgjb");
   if (state.succeeded) {
     toast.success("Message Sent!");
@@ -27,14 +17,15 @@ export const MainContact = () => {
           <img
             src={MailSvg}
             alt="mail"
-            className={(inViewport ? css(styles.rollIn) : "") + " w-64 mx-auto"}
+            className="w-64 mx-auto"
+            data-aos="zoom-out-up"
+            data-anchor="#contact"
           />
         </div>
         <div
-          className={
-            (inViewport ? css(styles.zoomInUp) : "") +
-            " flex flex-col items-center flex-grow w-full gap-1 mx-auto mt-5"
-          }
+          className="flex flex-col items-center flex-grow w-full gap-1 mx-auto mt-5"
+          data-aos="zoom-in-down"
+          data-anchor="#contact"
         >
           <h2 className="font-semibold">Contact Me</h2>
           <form
@@ -49,7 +40,6 @@ export const MainContact = () => {
               name="name"
               required
             />
-            <span ref={myRef}></span>
             <input
               className="contact_input"
               type="email"
