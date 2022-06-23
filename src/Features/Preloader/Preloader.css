@@ -1,0 +1,23 @@
+svg text {
+  /* stroke: #f9fafb; */
+  font-size: 150px;
+  font-weight: 700;
+  fill: #f9fafb;
+  stroke-width: 5;
+  animation: textAnimate 7s ease-in-out;
+}
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    fill: none;
+    stroke-dashoffset: 20%;
+  }
+  75% {
+    fill: transparent;
+  }
+  95% {
+    stroke-dasharray: 50% 0;
+    fill: #f9fafb;
+    stroke-dashoffset: -20%;
+  }
+}
