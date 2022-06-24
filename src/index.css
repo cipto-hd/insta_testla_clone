@@ -31,7 +31,7 @@
     @apply w-3/5 px-2 py-1 my-1 text-sm text-gray-400 bg-white rounded-md outline-none focus:ring-2 ring-blue-400;
   }
   .skill_icon {
-    @apply w-24 h-24 transition-colors duration-700 ease-in-out rounded-md hover:animate-bounce md:w-36 md:h-36 hover:fill-gray-50 hover:bg-gray-900;
+    @apply w-24 h-24 transition-colors duration-700 ease-in-out rounded-md md:w-36 md:h-36 hover:fill-gray-50 hover:bg-gray-900;
   }
 }
 

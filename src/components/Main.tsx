@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, setBottomReached } from "../store";
 import { MainAbout } from "./MainAbout";
@@ -11,6 +11,11 @@ export const Main = () => {
   const scrollRef = useRef(null);
   const dispatch = useDispatch();
   const { bottomReached } = useSelector((state: RootState) => state.app);
+  let chevron_down: HTMLElement | null;
+
+  useEffect(() => {
+    chevron_down = document.getElementById("chevron_down");
+  }, []);
 
   const onScroll = () => {
     if (scrollRef.current) {
@@ -18,6 +23,7 @@ export const Main = () => {
 
       if (scrollTop + clientHeight === scrollHeight) {
         dispatch(setBottomReached(true));
+        console.log(chevron_down);
       } else if (bottomReached && scrollTop + clientHeight < scrollHeight) {
         dispatch(setBottomReached(false));
       }

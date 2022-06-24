@@ -1,4 +1,4 @@
-import { FaChevronDown, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import ReactRotatingText from "react-rotating-text";
 import { DevSvg } from "../assets/portfolio";
 
@@ -68,11 +68,6 @@ export const MainHome = () => {
           data-aos="fade-right"
           data-anchor="#home"
         />
-      </div>
-      <div className="relative flex items-center justify-center w-full mt-2">
-        <a href="#about" className="absolute bottom-2">
-          <FaChevronDown className="w-10 h-10 animate-bounce" />
-        </a>
       </div>
     </div>
   );

@@ -1,18 +1,18 @@
-import { useState, useRef } from "react";
-import { FaDev, FaMedium, FaStackOverflow, FaYoutube } from "react-icons/fa";
+import {
+  FaChevronDown,
+  FaDev,
+  FaMedium,
+  FaStackOverflow,
+  FaYoutube,
+} from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
 
 export const Footer = () => {
   const { bottomReached } = useSelector((state: RootState) => state.app);
 
-  return (
-    <footer
-      className={
-        (bottomReached ? "" : "hidden ") +
-        "absolute flex flex-col items-center justify-center w-full gap-2 text-sm border-t-2 border-gray-500 z-20 pt-2 bottom-2  bg-gray-50 dark:bg-gray-800 dark:text-gray-50"
-      }
-    >
+  return bottomReached ? (
+    <footer className="absolute z-20 flex flex-col items-center justify-center w-full gap-2 pt-2 text-sm border-t-2 border-gray-500 bottom-2 bg-gray-50 dark:bg-gray-800 dark:text-gray-50">
       <p>Copyright &copy; {new Date().getFullYear()}</p>
       <p className="flex flex-row items-center justify-center gap-2">
         <a
@@ -46,5 +46,11 @@ export const Footer = () => {
       </p>
       <p>designed and developed by Cipto</p>
     </footer>
+  ) : (
+    <div className="absolute z-20 flex items-center justify-center w-full bottom-2">
+      <a href="#about" id="chevron_down">
+        <FaChevronDown className="w-10 h-10 animate-bounce" />
+      </a>
+    </div>
   );
 };

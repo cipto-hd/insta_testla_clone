@@ -16,6 +16,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.4.0",
+    "react-in-viewport": "^1.0.0-alpha.28",
     "react-redux": "^8.0.2",
     "react-rotating-text": "^1.4.1",
     "react-router-dom": "^6.3.0",
