@@ -10,7 +10,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-30 w-full -mb-20 text-gray-800 border-b shadow-md bg-gray-50 dark:bg-gray-800 dark:text-gray-50">
-      <div className="container relative flex items-center justify-between w-full h-20 overflow-x-clip">
+      <div className="container relative flex items-center justify-between w-full h-20 border-none shadow-none overflow-x-clip">
         {/* Left */}
         <div className="flex items-center justify-center w-24 h-20 text-2xl font-bold text-center transition-colors duration-300 ease-in-out bg-gray-200 border-gray-500 cursor-pointer dark:border-gray-300 border-x-2 dark:bg-gray-600 dark:hover:bg-gray-700 hover:bg-gray-300">
           <a href="#home">
