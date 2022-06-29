@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import {
   FaCss3,
   FaGit,
@@ -8,6 +9,9 @@ import {
   FaPhp,
   FaReact,
 } from "react-icons/fa";
+import { useInViewport } from "react-in-viewport";
+import { useDispatch } from "react-redux";
+import { setNextHash } from "../store";
 
 const NestLogo = (props: any) => (
   <svg
@@ -47,6 +51,14 @@ const MongoDBLogo = (props: any) => (
   </svg>
 );
 export const MainSkills = () => {
+  const dispatch = useDispatch();
+  const myRef = useRef(null);
+  const { inViewport } = useInViewport(myRef, {}, { disconnectOnLeave: false });
+
+  useEffect(() => {
+    inViewport && dispatch(setNextHash("contact"));
+  }, [inViewport]);
+
   return (
     <div id="skills" className="h-screen snap-start">
       <div className="container flex flex-col h-full pt-24 md:div-row">
@@ -75,16 +87,16 @@ export const MainSkills = () => {
           <div data-aos="zoom-out" data-anchor="#skills">
             <FaPhp className="skill_icon" />
           </div>
-          <div data-aos="zoom-out" data-anchor="#skills">
+          <div data-aos="zoom-out" data-anchor="#skills" ref={myRef}>
             <FaLaravel className="skill_icon" />
           </div>
 
           <div data-aos="zoom-out" data-anchor="#skills">
-            <MongoDBLogo className="bg-gray-50 skill_icon hover:border dark:bg-gray-900 dark:fill-gray-50 fill-gray-900" />
+            <MongoDBLogo className="skill_icon" />
           </div>
 
           <div data-aos="zoom-out" data-anchor="#skills">
-            <MariaDBLogo className="p-1 bg-gray-50 skill_icon dark:bg-gray-900 dark:fill-gray-50 fill-gray-900" />
+            <MariaDBLogo className="skill_icon" />
           </div>
 
           <div data-aos="zoom-out" data-anchor="#skills">

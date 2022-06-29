@@ -1,8 +1,20 @@
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import ReactRotatingText from "react-rotating-text";
 import { DevSvg } from "../assets/portfolio";
+import { useInViewport } from "react-in-viewport";
+import { useDispatch } from "react-redux";
+import { setNextHash } from "../store";
+import { useRef, useEffect } from "react";
 
 export const MainHome = () => {
+  const dispatch = useDispatch();
+  const myRef = useRef(null);
+  const { inViewport } = useInViewport(myRef, {}, { disconnectOnLeave: false });
+
+  useEffect(() => {
+    inViewport && dispatch(setNextHash("about"));
+  }, [inViewport]);
+
   return (
     <div id="home" className="h-screen snap-start">
       <div className="container flex flex-col items-start h-full gap-10 pt-24 md:flex-row">
@@ -32,7 +44,10 @@ export const MainHome = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="px-6 py-2 mt-4 uppercase transition-colors duration-300 ease-in-out bg-gray-300 rounded-lg hover:bg-gray-600 hover:text-gray-100 dark:text-gray-800 dark:hover:text-gray-100">
+            <button
+              ref={myRef}
+              className="px-6 py-2 mt-4 uppercase transition-colors duration-300 ease-in-out bg-gray-300 rounded-lg hover:bg-gray-600 hover:text-gray-100 dark:text-gray-800 dark:hover:text-gray-100"
+            >
               hire me
             </button>
           </a>

@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers, Reducer } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import {
@@ -20,6 +20,7 @@ interface AppState {
   themeMode: string;
   isSideMenuOpen: boolean;
   bottomReached: boolean;
+  nextHash: string;
 }
 
 /** Initiliaze the state */
@@ -27,6 +28,7 @@ const initialState: AppState = {
   themeMode: "dark",
   isSideMenuOpen: false,
   bottomReached: false,
+  nextHash: "about",
 };
 
 const appSlice = createSlice({
@@ -42,10 +44,13 @@ const appSlice = createSlice({
     setBottomReached: (state, { payload }) => {
       state.bottomReached = payload;
     },
+    setNextHash: (state, { payload }) => {
+      state.nextHash = payload;
+    },
   },
 });
 
-export const { toggleMode, toggleSideMenu, setBottomReached } =
+export const { toggleMode, toggleSideMenu, setBottomReached, setNextHash } =
   appSlice.actions;
 /** ================================================ */
 
@@ -67,6 +72,7 @@ export const { toggleYesNo } = dummySlice.actions;
 const saveSubsetBlacklistFilter = createBlacklistFilter("app", [
   "isSideMenuOpen",
   "bottomReached",
+  "nextHash",
 ]);
 
 const persistConfig = {
@@ -77,7 +83,10 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(
   persistConfig,
-  combineReducers({ app: appSlice.reducer, dummy: dummySlice.reducer })
+  combineReducers({
+    app: appSlice.reducer,
+    dummy: dummySlice.reducer,
+  })
 );
 
 const store = configureStore({

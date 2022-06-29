@@ -36,7 +36,6 @@ export const MainContact = () => {
               className="contact_input"
               type="text"
               placeholder="Name"
-              id="inpnt"
               name="name"
               required
             />
@@ -44,7 +43,6 @@ export const MainContact = () => {
               className="contact_input"
               type="email"
               placeholder="Email"
-              id="inpnt"
               name="email"
               required
             />
@@ -52,13 +50,11 @@ export const MainContact = () => {
               className="contact_input"
               type="text"
               placeholder="Subject"
-              id="inpnt"
               required
-            />{" "}
+            />
             <textarea
               className="h-24 contact_input"
               placeholder="Message"
-              id="inpnt"
               name="message"
               required
             />
