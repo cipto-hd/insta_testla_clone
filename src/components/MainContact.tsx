@@ -1,21 +1,12 @@
 import { useForm, ValidationError } from "@formspree/react";
-import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { MailSvg } from "../assets/portfolio";
 
 export const MainContact = () => {
   const [state, handleSubmit] = useForm("mgedbqaj");
-  const initialFormData = {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  };
-  const [formData, setFormData] = useState(initialFormData);
 
   if (state.succeeded) {
     toast.success("Message Sent!", { type: "success", position: "top-right" });
-    setFormData(initialFormData);
   }
 
   return (
@@ -49,10 +40,6 @@ export const MainContact = () => {
               name="name"
               id="name"
               required
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
             />
             <ValidationError prefix="Name" field="name" errors={state.errors} />
 
@@ -63,10 +50,6 @@ export const MainContact = () => {
               name="email"
               id="email"
               required
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
             />
             <ValidationError
               prefix="Email"
@@ -81,10 +64,6 @@ export const MainContact = () => {
               name="subject"
               id="subject"
               required
-              value={formData.subject}
-              onChange={(e) =>
-                setFormData({ ...formData, subject: e.target.value })
-              }
             />
             <ValidationError
               prefix="Subject"
@@ -98,10 +77,6 @@ export const MainContact = () => {
               name="message"
               id="message"
               required
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
             />
             <ValidationError
               prefix="Message"
