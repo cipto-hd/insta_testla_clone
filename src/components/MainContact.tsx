@@ -1,4 +1,4 @@
-import { useForm } from "@formspree/react";
+import { useForm, ValidationError } from "@formspree/react";
 import { toast, ToastContainer } from "react-toastify";
 import { MailSvg } from "../assets/portfolio";
 
@@ -37,27 +37,52 @@ export const MainContact = () => {
               type="text"
               placeholder="Name"
               name="name"
+              id="name"
               required
             />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
+
             <input
               className="contact_input"
               type="email"
               placeholder="Email"
               name="email"
+              id="email"
               required
             />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
+
             <input
               className="contact_input"
               type="text"
               placeholder="Subject"
+              name="subject"
+              id="subject"
               required
             />
+            <ValidationError
+              prefix="Subject"
+              field="subject"
+              errors={state.errors}
+            />
+
             <textarea
               className="h-24 contact_input"
               placeholder="Message"
               name="message"
+              id="message"
               required
             />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
+
             <button
               type="submit"
               className="px-4 py-2 mt-2 bg-gray-300 rounded-lg dark:text-gray-700 hover:font-bold first-letter:uppercase"
