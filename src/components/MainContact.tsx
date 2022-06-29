@@ -1,17 +1,32 @@
 import { useForm, ValidationError } from "@formspree/react";
+import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { MailSvg } from "../assets/portfolio";
 
 export const MainContact = () => {
   const [state, handleSubmit] = useForm("mgedbqaj");
+  const initialFormData = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+  const [formData, setFormData] = useState(initialFormData);
+
   if (state.succeeded) {
-    toast.success("Message Sent!");
+    toast.success("Message Sent!", { type: "success", position: "top-right" });
+    setFormData(initialFormData);
+  } else if (state.errors) {
+    toast.error("Sorry, something error prevent sending the message.", {
+      type: "warning",
+      position: "top-right",
+    });
   }
 
   return (
     <div id="contact" className="h-screen snap-start">
       <div className="container flex flex-col items-start h-full pt-24 md:flex-row">
-        <ToastContainer limit={1} />
+        <ToastContainer limit={1} autoClose={3000} />
 
         <div className="w-full">
           <img
@@ -39,6 +54,10 @@ export const MainContact = () => {
               name="name"
               id="name"
               required
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
             />
             <ValidationError prefix="Name" field="name" errors={state.errors} />
 
@@ -49,6 +68,10 @@ export const MainContact = () => {
               name="email"
               id="email"
               required
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
             <ValidationError
               prefix="Email"
@@ -63,6 +86,10 @@ export const MainContact = () => {
               name="subject"
               id="subject"
               required
+              value={formData.subject}
+              onChange={(e) =>
+                setFormData({ ...formData, subject: e.target.value })
+              }
             />
             <ValidationError
               prefix="Subject"
@@ -76,6 +103,10 @@ export const MainContact = () => {
               name="message"
               id="message"
               required
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
             />
             <ValidationError
               prefix="Message"
