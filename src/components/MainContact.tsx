@@ -16,11 +16,6 @@ export const MainContact = () => {
   if (state.succeeded) {
     toast.success("Message Sent!", { type: "success", position: "top-right" });
     setFormData(initialFormData);
-  } else if (state.errors) {
-    toast.error("Sorry, something error prevent sending the message.", {
-      type: "warning",
-      position: "top-right",
-    });
   }
 
   return (
