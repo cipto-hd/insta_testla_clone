@@ -28,10 +28,10 @@
     @apply text-xl transition-colors duration-300 ease-in-out rounded-sm hover:text-gray-100 dark:hover:text-gray-800 hover:bg-gray-800 dark:hover:bg-gray-100;
   }
   .contact_input {
-    @apply w-3/5 px-2 py-1 my-1 text-sm text-gray-400 bg-white rounded-md outline-none focus:ring-2 ring-blue-400;
+    @apply w-3/5 px-2 py-1 my-1 text-sm text-gray-800 bg-gray-100 rounded-md outline-none placeholder:text-gray-400 ring-gray-300 ring-2 focus:ring-2 focus:ring-blue-400;
   }
   .skill_icon {
-    @apply w-24 h-24 transition-colors duration-700 ease-in-out rounded-md md:w-36 md:h-36 hover:fill-gray-50 hover:bg-gray-900;
+    @apply w-24 h-24 transition-colors duration-700 ease-in-out rounded-md fill-gray-900 bg-gray-50 dark:fill-gray-50 dark:bg-gray-900 md:w-36 md:h-36 hover:fill-gray-50 hover:bg-gray-900 dark:hover:fill-gray-900 dark:hover:bg-gray-50;
   }
 }
 
