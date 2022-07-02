@@ -7,7 +7,7 @@ interface IProjectThumb {
 export const ProjectThumb = ({ thumb, onClick }: IProjectThumb) => {
   return (
     <div
-      className="relative flex flex-col h-24 cursor-pointer w-44 md:w-60 md:h-36"
+      className="relative flex flex-col h-20 cursor-pointer w-36 md:w-60 md:h-32"
       data-aos="zoom-in"
       data-anchor="#projects"
       {...(onClick && { onClick })}
