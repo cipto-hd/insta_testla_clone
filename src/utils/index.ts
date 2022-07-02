@@ -1,4 +1,4 @@
-export const fixAosAnim = () => {
+export const fixAosFromStarting = () => {
   const aosAnimation = document.querySelectorAll("[data-aos]");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
