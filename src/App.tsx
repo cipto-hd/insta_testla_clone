@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MainPage, Preloader } from "./features";
+import { MainPage, Preloader } from "./pages";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 
@@ -8,7 +8,7 @@ function App() {
   const themeMode = useSelector((state: RootState) => state.app.themeMode);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 10000);
+    setTimeout(() => setLoading(false), 8000);
   }, []);
 
   return <>{loading ? <Preloader /> : <MainPage themeMode={themeMode} />}</>;
