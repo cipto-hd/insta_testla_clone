@@ -16,6 +16,7 @@ export const MainContact = () => {
   if (state.succeeded) {
     toast.success("Message Sent!", { type: "success", position: "top-right" });
     resetForm();
+    setFormData(initialFormData);
   }
 
   return (
