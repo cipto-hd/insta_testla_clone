@@ -1,12 +1,21 @@
 import { useForm, ValidationError } from "@formspree/react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import { MailSvg } from "../assets/portfolio";
 
 export const MainContact = () => {
-  const [state, handleSubmit] = useForm("mgedbqaj");
+  const [state, handleSubmit, resetForm] = useForm("mgedbqaj");
+  const initialFormData = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+  const [formData, setFormData] = useState(initialFormData);
 
   if (state.succeeded) {
     toast.success("Message Sent!", { type: "success", position: "top-right" });
+    resetForm();
   }
 
   return (
@@ -38,6 +47,11 @@ export const MainContact = () => {
               name="name"
               id="name"
               required
+              disabled={state.submitting}
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
             />
             <ValidationError prefix="Name" field="name" errors={state.errors} />
 
@@ -48,6 +62,11 @@ export const MainContact = () => {
               name="email"
               id="email"
               required
+              disabled={state.submitting}
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
             <ValidationError
               prefix="Email"
@@ -62,6 +81,11 @@ export const MainContact = () => {
               name="subject"
               id="subject"
               required
+              disabled={state.submitting}
+              value={formData.subject}
+              onChange={(e) =>
+                setFormData({ ...formData, subject: e.target.value })
+              }
             />
             <ValidationError
               prefix="Subject"
@@ -75,6 +99,11 @@ export const MainContact = () => {
               name="message"
               id="message"
               required
+              disabled={state.submitting}
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
             />
             <ValidationError
               prefix="Message"
@@ -84,10 +113,15 @@ export const MainContact = () => {
 
             <button
               type="submit"
-              className="px-4 py-2 mt-2 bg-gray-300 rounded-lg dark:text-gray-700 hover:font-bold first-letter:uppercase"
+              className={
+                state.submitting
+                  ? "animate-pulse"
+                  : "" +
+                    " px-4 py-2 mt-2 bg-gray-300 rounded-lg dark:text-gray-700 hover:font-bold first-letter:uppercase"
+              }
               disabled={state.submitting}
             >
-              submit
+              {state.submitting ? "submitting..." : "submit"}
             </button>
           </form>
         </div>
