@@ -27,8 +27,8 @@ export const MainAbout = () => {
           <h2 ref={myRef}>About Me</h2>
           <p className="mb-4 aos" data-aos="fade-left" data-aos-anchor="#about">
             I am a FullStack Developer and passionate about everything related
-            to technology, espespecially IT. Aside from coding, I enjoy biking
-            to different places.
+            to technology, especially IT. Aside from coding, I enjoy biking to
+            different places.
           </p>
           <button
             data-aos="fade-right"
