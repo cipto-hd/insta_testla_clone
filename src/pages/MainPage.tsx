@@ -10,7 +10,7 @@ export const MainPage = ({ themeMode }: { themeMode: string }) => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
     fixAosFromStarting();
-    window.location.href = window.location.hash; // on window load, scroll page based on hash
+    !!window.location.hash && (window.location.href = window.location.hash); // on window load, scroll page based on hash
   }, []);
 
   return (
