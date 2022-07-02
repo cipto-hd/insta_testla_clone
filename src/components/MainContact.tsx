@@ -1,5 +1,5 @@
 import { useForm, ValidationError } from "@formspree/react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { MailSvg } from "../assets/portfolio";
 
 export const MainContact = () => {
@@ -12,8 +12,6 @@ export const MainContact = () => {
   return (
     <div id="contact" className="h-screen snap-start">
       <div className="container flex flex-col items-start h-full pt-24 md:flex-row">
-        <ToastContainer limit={1} autoClose={3000} />
-
         <div className="w-full">
           <img
             src={MailSvg}
