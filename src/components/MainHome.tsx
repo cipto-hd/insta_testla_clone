@@ -35,8 +35,9 @@ export const MainHome = () => {
             </span>
           </h2>
           <p>
-            I build web experience and awesome web app, <br /> i solve variant
-            web problem and also write code <br /> to make things works
+            I build some awesome web and mobile apps, <br /> solve variety of
+            web problems and <br />
+            also write code to make things works
           </p>
 
           <a
