@@ -115,10 +115,8 @@ export const MainContact = () => {
             <button
               type="submit"
               className={
-                state.submitting
-                  ? "animate-pulse"
-                  : "" +
-                    " px-4 py-2 mt-2 bg-gray-300 rounded-lg dark:text-gray-700 hover:font-bold first-letter:uppercase"
+                (state.submitting ? "animate-pulse" : "") +
+                " px-4 py-2 mt-2 bg-gray-300 rounded-lg dark:text-gray-700 hover:font-bold first-letter:uppercase"
               }
               disabled={state.submitting}
             >
