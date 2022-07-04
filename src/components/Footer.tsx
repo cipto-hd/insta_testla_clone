@@ -34,7 +34,7 @@ export const Footer = () => {
             <p>Copyright &copy; {new Date().getFullYear()}</p>
             <p className="flex flex-row items-center justify-center gap-2">
               <a
-                href="https://stackoverflow.com/ciptohadi/"
+                href="https://stackoverflow.com/users/3575693/cipto-hd"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -48,14 +48,14 @@ export const Footer = () => {
                 <FaYoutube className="social-link" />
               </a>
               <a
-                href="https://medium.com/cipto.hd"
+                href="https://medium.com/@ciptohadi"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaMedium className="social-link" />
               </a>
               <a
-                href="https://dev.to/cipto.hd/"
+                href="https://dev.to/cipto/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
