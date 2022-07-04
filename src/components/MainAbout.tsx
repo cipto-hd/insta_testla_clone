@@ -33,7 +33,14 @@ export const MainAbout = () => {
           <button
             data-aos="fade-right"
             data-aos-anchor="#about"
-            onClick={() => alert("Download Resume")}
+            onClick={() =>
+              window
+                .open(
+                  "https://drive.google.com/file/d/1PUS0m5Ow3VHdbUHjT19EhFGldoFrLxqW/view?usp=sharing",
+                  "_blank"
+                )
+                ?.focus()
+            }
             className="btn-hero"
           >
             Download My Resume
